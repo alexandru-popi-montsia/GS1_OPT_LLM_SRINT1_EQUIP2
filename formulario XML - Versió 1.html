@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de autodiagnóstico de sostenibilidad para PYMES</title>
+    <link rel="stylesheet" href="XML/formulario XML - CSS Style.css">
+</head>
+<body>
+    <div class="questionnaire-container">
+        <h1>Guía de autodiagnóstico de sostenibilidad para PYMES</h1>
+        <form action="">
+            <!-- Aspectos sociales -->
+            <div class="section">
+                <h3>Empleados/Condiciones laborales</h3>
+                <!-- Condiciones laborales -->
+                <div class="question">
+                    <label>¿Cómo afronta su empresa los asuntos relacionados a la gestión de las condiciones laborales?</label>
+                    <input type="radio" name="labor_conditions" value="not_applicable" required> No aplica / No cumple<br>
+                    <input type="radio" name="labor_conditions" value="regulation_compliance"> La compañía cumple la regulación en materia laboral (Estatuto de los trabajadores, Convenio colectivo), Seguridad y Salud, Protección de datos...<br>
+                    <input type="radio" name="labor_conditions" value="plans_goals"> Además del cumplimiento regulatorio, la empresa establece planes y objetivos para mejorar la gestión de las condiciones laborales.<br>
+                    <input type="radio" name="labor_conditions" value="strategy_management"> Las cuestiones laborales y de desarrollo profesional forman parte de la estrategia de la empresa y se supervisan por la dirección.<br>
+                </div>
+
+                <!-- Diversidad y bienestar -->
+                <div class="question">
+                    <label>¿Cómo gestiona su organización los aspectos relacionados con la diversidad y el bienestar emocional?</label>
+                    <input type="radio" name="diversity_wellbeing" value="not_applicable" required> No aplica / No cumple<br>
+                    <input type="radio" name="diversity_wellbeing" value="regulation_compliance"> La compañía cumple la regulación en materia de diversidad (ley de igualdad), conciliación<br>
+                    <input type="radio" name="diversity_wellbeing" value="practices_goals"> La empresa establece prácticas y objetivos para mejorar la gestión de la diversidad, que van más allá del cumplimiento regulatorio.<br>
+                    <input type="radio" name="diversity_wellbeing" value="strategy_management"> Los asuntos relacionados con diversidad forman parte de la estrategia de la empresa y se supervisan por la dirección.<br>
+                </div>
+
+                <!-- Talento -->
+                <div class="question">
+                    <label>¿Cómo gestiona su organización los aspectos relacionados con el desarrollo profesional?</label>
+                    <input type="radio" name="professional_development" value="not_applicable" required> No aplica / No cumple<br>
+                    <input type="radio" name="professional_development" value="regulation_compliance"> La compañía cumple la regulación en materia de desarrollo profesional: Formación<br>
+                    <input type="radio" name="professional_development" value="plans_goals"> La empresa establece planes y objetivos para mejorar la gestión del desarrollo profesional, que van más allá del cumplimiento regulatorio.<br>
+                    <input type="radio" name="professional_development" value="strategy_management"> Los asuntos de desarrollo profesional forman parte de la estrategia de la empresa y se supervisan por la dirección.<br>
+                </div>
+            </div>
+
+            <!-- Proveedores -->
+            <div class="section">
+                <h3>Proveedores</h3>
+                <div class="question">
+                    <label>¿Se tienen en cuenta aspectos sociales y ambientales en las decisiones de compra de su empresa?</label>
+                    <input type="radio" name="suppliers" value="not_applicable" required> No aplica / No se gestiona<br>
+                    <input type="radio" name="suppliers" value="regulation_compliance"> La organización cumple con la regulación en materia de cumplimiento de contrato (en especial en las condiciones de pago).<br>
+                    <input type="radio" name="suppliers" value="social_criteria"> Además del cumplimiento regulatorio, la empresa incorpora criterios sociales y ambientales en las condiciones de compra y contratación.<br>
+                    <input type="radio" name="suppliers" value="strategy_management"> La gestión del impacto social y ambiental de los proveedores forma parte de la estrategia de la empresa y se supervisa por la dirección.<br>
+                </div>
+            </div>
+
+            <!-- Clientes -->
+            <div class="section">
+                <h3>Clientes</h3>
+                <div class="question">
+                    <label>¿Cómo afronta su empresa los asuntos relacionados con el cliente?</label>
+                    <input type="radio" name="clients" value="not_applicable" required> No aplica<br>
+                    <input type="radio" name="clients" value="regulation_compliance"> La empresa cumple con la regulación en relación al cliente. En particular: salud y seguridad de la fabricación.<br>
+                    <input type="radio" name="clients" value="improvement_goals"> La empresa busca objetivos para la mejora de los estándares de su producto en relación a la seguridad e información del producto.<br>
+                    <input type="radio" name="clients" value="strategy_management"> Los asuntos relacionados con la salud y la seguridad en la fabricación y el uso del producto, forman parte de la estrategia de la empresa.<br>
+                </div>
+            </div>
+
+            <!-- Consumidor -->
+            <div class="section">
+                <h3>Consumidor</h3>
+                <div class="question">
+                    <label>¿Cómo asume su empresa los asuntos relacionados con la información que recibe el consumidor?</label>
+                    <input type="radio" name="consumers" value="not_applicable" required> No aplica<br>
+                    <input type="radio" name="consumers" value="regulation_compliance"> La empresa cumple con la regulación en relación al cliente. En particular: información al consumidor, uso del producto...<br>
+                    <input type="radio" name="consumers" value="sustainability_criteria"> Además del cumplimiento regulatorio, la compañía establece criterios relacionados con la sostenibilidad en la comunicación de sus productos a los clientes.<br>
+                    <input type="radio" name="consumers" value="strategy_management"> Acciones para involucrar al consumidor en su estrategia social y ambiental.<br>
+                </div>
+            </div>
+
+            <button type="submit">Enviar</button>
+            <button type="button" id="download-button">Descarregar Resultats</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtenim el formulari un cop la pàgina estigui carregada
+            const form = document.getElementById('questionnaire-form');
+            const downloadButton = document.getElementById('download-button');
+            
+            // Verifiquem si el formulari existeix
+            if (!form) {
+                console.error("El formulari no s'ha trobat.");
+                return;
+            }
+
+            // Afegim l'escolta de l'esdeveniment al botó de descarregar
+            downloadButton.addEventListener('click', function() {
+                // Creem un objecte FormData amb les dades del formulari
+                const formData = new FormData(form);
+
+                // Creem el contingut del fitxer de resultats
+                let results = "Resultats del Formulari:\n\n";
+                formData.forEach((value, key) => {
+                    results += ${key}: ${value}\n;
+                });
+
+                // Generem un fitxer de text
+                const blob = new Blob([results], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+
+                // Creem un enllaç per descarregar el fitxer
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'resultats_formulari.txt';
+                a.click();
+
+                // Alliberem la memòria
+                URL.revokeObjectURL(url);
+            });
+        });
+    </script>
+</body>
+</html>
