@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla de Pàgina Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="formulari.html">FORMULARI</a></li>
+                <li><a href="ia.html">Intel·ligència Artificial</a></li>
+            </ul>
+        </nav>
+    </header>
+<div>
+    <h1>Guia d'autodiagnòstic de sostenibilitat per a PIMES</h1>
+    <form id="form">
+        <div class="section">
+            <h3>Empleats/Condicions laborals</h3>
+            <!-- Condicions laborals -->
+            <div class="question">
+                <label><strong>Com afronta la seva empresa els assumptes relacionats amb la gestió de les condicions laborals?</strong></label>
+                <br><input type="radio" name="condicions laborals" value="(0) No s'aplica" required> No aplica / No compleix<br>
+                <input type="radio" name="condicions laborals" value="(1) Compleix la regulació"> La companyia compleix la regulació en matèria laboral (Estatut dels treballadors, Conveni col·lectiu), Seguretat i Salut, Protecció de dades...<br>
+                <input type="radio" name="condicions laborals" value="(2) S'estableixen plans per millorar'"> A més del compliment regulatori, l'empresa estableix plans i objectius per millorar la gestió de les condicions laborals.<br>
+                <input type="radio" name="condicions laborals" value="(3) Es forma part de l'estratègia de l'empresa"> Les qüestions laborals i de desenvolupament professional formen part de l'estratègia de l'empresa i són supervisades per la direcció.<br>
+            </div>
+
+            <!-- Diversitat i benestar -->
+            <div class="question">
+                <label><strong>Com gestiona la seva organització els aspectes relacionats amb la diversitat i el benestar emocional?</strong></label>
+                <br><input type="radio" name="diversitat i benestar emocional" value="(0) No s'aplica" required> No aplica / No compleix<br>
+                <input type="radio" name="diversitat i benestar emocional" value="(1) Compleix la regulació"> La companyia compleix la regulació en matèria de diversitat (llei d'igualtat), conciliació<br>
+                <input type="radio" name="diversitat i benestar emocional" value="(2) S'estableixen plans per millorar"> L'empresa estableix pràctiques i objectius per millorar la gestió de la diversitat, que van més enllà del compliment regulatori.<br>
+                <input type="radio" name="diversitat i benestar emocional" value="(3) Es forma part de l'estratègia de l'empresa"> Els assumptes relacionats amb la diversitat formen part de l'estratègia de l'empresa i són supervisats per la direcció.<br>
+            </div>
+
+            <!-- Talent -->
+            <div class="question">
+                <label><strong>Com gestiona la seva organització els aspectes relacionats amb el desenvolupament professional?</strong></label>
+                <br><input type="radio" name="desenvolupament professional" value="(0) No s'aplica" required> No aplica / No compleix<br>
+                <input type="radio" name="desenvolupament professional" value="(1) Compleix la regulació"> La companyia compleix la regulació en matèria de desenvolupament professional: Formació<br>
+                <input type="radio" name="desenvolupament professional" value="(2) S'estableixen plans per millorar"> L'empresa estableix plans i objectius per millorar la gestió del desenvolupament professional, que van més enllà del compliment regulatori.<br>
+                <input type="radio" name="desenvolupament professional" value="(3) Es forma part de l'estratègia de l'empresa"> Els assumptes de desenvolupament professional formen part de l'estratègia de l'empresa i són supervisats per la direcció.<br>
+            </div>
+        </div>
+
+        <!-- Proveïdors -->
+        <div class="section">
+            <h3>Proveïdors</h3>
+            <div class="question">
+                <label>Es tenen en compte aspectes socials i ambientals en les decisions de compra de la seva empresa?</label>
+                <br><input type="radio" name="aspectes socials" value="(0) No s'aplica" required> No aplica / No es gestiona<br>
+                <input type="radio" name="aspectes socials" value="(1) Compleix la regulació"> L'organització compleix amb la regulació en matèria de compliment de contracte (especialment en les condicions de pagament).<br>
+                <input type="radio" name="aspectes socials" value="(2) S'estableixen plans per millorar"> A més del compliment regulatori, l'empresa incorpora criteris socials i ambientals en les condicions de compra i contractació.<br>
+                <input type="radio" name="aspectes socials" value="(3) Es forma part de l'estratègia de l'empresa"> La gestió de l'impacte social i ambiental dels proveïdors forma part de l'estratègia de l'empresa i és supervisada per la direcció.<br>
+            </div>
+        </div>
+
+        <!-- Clients -->
+        <div class="section">
+            <h3>Clients</h3>
+            <div class="question">
+                <label>Com afronta la seva empresa els assumptes relacionats amb el client?</label>
+                <br><input type="radio" name="suport als clients" value="(0) No s'aplica" required> No aplica<br>
+                <input type="radio" name="suport als clients" value="(1) Compleix la regulació"> L'empresa compleix amb la regulació en relació al client. En particular: salut i seguretat de la fabricació.<br>
+                <input type="radio" name="suport als clients" value="(2) S'estableixen plans per millorar"> L'empresa busca objectius per millorar els estàndards del seu producte en relació a la seguretat i informació del producte.<br>
+                <input type="radio" name="suport als clients" value="(3) Es forma part de l'estratègia de l'empresa"> Els assumptes relacionats amb la salut i la seguretat en la fabricació i l'ús del producte, formen part de l'estratègia de l'empresa.<br>
+            </div>
+        </div>
+
+        <!-- Consumidor -->
+        <div class="section">
+            <h3>Consumidor</h3>
+            <div class="question">
+                <label>Com assumeix la seva empresa els assumptes relacionats amb la informació que rep el consumidor?</label>
+               <br> <input type="radio" name="informació al consumidor" value="(0) No s'aplica" required> No aplica<br>
+                <input type="radio" name="informació al consumidor" value="(1) Compleix la regulació"> L'empresa compleix amb la regulació en relació al client. En particular: informació al consumidor, ús del producte...<br>
+                <input type="radio" name="informació al consumidor" value="(2) S'estableixen plans per millorar"> A més del compliment regulatori, la companyia estableix criteris relacionats amb la sostenibilitat en la comunicació dels seus productes als clients.<br>
+                <input type="radio" name="informació al consumidor" value="(3) Es forma part de l'estratègia de l'empresa"> Accions per involucrar el consumidor en la seva estratègia social i ambiental.<br>
+            </div>
+        </div>
+  
+        <div class="button-container">
+            <button type="submit">Enviar</button>
+            <button type="button" id="download-button">Descarregar Resultats</button>
+        </div>
+    </form>
+</div>
+
+<script>
+document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar el envío predeterminado del formulario
+    saveFormToXML();
+});
+
+function saveFormToXML() {
+    // Obtener todas las preguntas y respuestas seleccionadas
+    const questions = document.querySelectorAll('.question');
+    let xmlContent = '<?xml version="1.0" encoding="UTF-8"?>\n<survey>\n';
+
+    questions.forEach((question, index) => {
+        const questionText = question.querySelector('label').innerText;
+        const selectedOption = question.querySelector('input[type="radio"]:checked');
+
+        if (selectedOption) {
+            const responseValue = selectedOption.value;
+            xmlContent += `  <question id="q${index + 1}">\n`;
+            xmlContent += `    <text>${escapeXML(questionText)}</text>\n`;
+            xmlContent += `    <response>${escapeXML(responseValue)}</response>\n`;
+            xmlContent += `  </question>\n`;
+        }
+    });
+
+    xmlContent += '</survey>';
+
+    // Crear un archivo Blob y descargarlo
+    const blob = new Blob([xmlContent], { type: 'application/xml' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'survey_results.xml';
+    link.click();
+}
+
+// Función para escapar caracteres especiales en XML
+function escapeXML(text) {
+    return text.replace(/&/g, '&amp;')
+               .replace(/</g, '&lt;')
+               .replace(/>/g, '&gt;')
+               .replace(/"/g, '&quot;')
+               .replace(/'/g, '&apos;');
+}
+</script>
+
+
+</body>

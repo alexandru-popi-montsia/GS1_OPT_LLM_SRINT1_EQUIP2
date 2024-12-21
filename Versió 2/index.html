@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla de Página Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">EMPRESES</a></li>
+                <li><a href="formulari.html">Formulari</a></li>
+                <li><a href="ia.html">Intel·ligència Artificial</a></li>
+                <div class="search-container">
+                    <input type="text" id="cercador" placeholder="Cercar..." name="cercador">
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="contingut">Carregant fitxer XML...</div>
+
+    <script>
+        var divElement = document.getElementById("contingut");
+        var cercador = document.getElementById("cercador");
+        var empresesData = []; // Per guardar les dades XML d'empreses
+
+        fetch("./empreses.xml")
+            .then(function(response) {
+                if (!response.ok) { // La negació "!" s'utilitza per invertir el valor
+                    throw new Error("Error carregant l'XML: " + response.statusText); // Está carregant el fitxer XML
+                }
+                return response.text(); // Quan ja hagi carregat el fitxer, l'error anterior (loading) s'actualitzará amb les empreses.
+            })
+            .then(function(xmlstring) {
+                var xml = new DOMParser().parseFromString(xmlstring, "text/xml");
+                var empreses = xml.querySelectorAll("empresa"); // Identificar totes les etiquetes "empresa"
+
+                empresesData = Array.from(empreses).map(function(empresa) { // Map genera un array nou, on cada node XML ha estat convertit en un objecte JavaScript.
+                    return {
+                        id: empresa.getAttribute("id"),
+                        nom: empresa.querySelector("nom").textContent,
+                        sector: empresa.querySelector("sector").textContent
+                    };
+                });
+
+                mostrarEmpreses(empresesData); // Mostra totes les empreses sense buscador
+            })
+            .catch(function(error) {
+                divElement.innerHTML = "<p style='color: red;'>" + error.message + "</p>";
+                console.error(error); // Mostra l'error de la consola, en cas de que no es trobi el fitxer xml.
+            });
+
+        function mostrarEmpreses(empreses) { // Funció que mostra empreses al contingut
+            var contenidor = "";
+            empreses.forEach(function(empresa) {
+                contenidor += "<h3>" + empresa.nom + "</h3>";
+                contenidor += "<p>Sector: " + empresa.sector + "</p>";
+                contenidor += "<p>ID: " + empresa.id + "</p>";
+            });
+            divElement.innerHTML = contenidor;
+        }
+
+        cercador.addEventListener("input", function() {
+            var text = cercador.value.toLowerCase(); // converteix el text del cercador a minuscules
+            var empresesFiltrades = empresesData.filter(function(empresa) {
+                return empresa.nom.toLowerCase().includes(text) ||
+                       empresa.sector.toLowerCase().includes(text) ||
+                       empresa.id.toLowerCase().includes(text);
+            });
+            mostrarEmpreses(empresesFiltrades);
+        });
+    </script>
+</body>
+</html>

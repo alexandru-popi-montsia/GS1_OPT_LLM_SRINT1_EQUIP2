@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directori>
+    <empresa id="1">
+        <nom>Empresa Alpha</nom>
+        <sector>Tecnologia</sector>
+    </empresa>
+    <empresa id="2">
+        <nom>Empresa Beta</nom>
+        <sector>Salut</sector>
+    </empresa>
+    <empresa id="3">
+        <nom>Empresa Gamma</nom>
+        <sector>Finances</sector>
+    </empresa>
+</directori>
